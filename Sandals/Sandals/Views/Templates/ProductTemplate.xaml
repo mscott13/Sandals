@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sandals.Views.Templates.ProductTemplate">
+  <ContentView.Content>
+        <Frame BorderColor="#dadada" VerticalOptions="Start" IsClippedToBounds="True" CornerRadius="5"  HasShadow="True" Padding="0">
+            <StackLayout Orientation="Vertical" Spacing="0">
+                <Image  WidthRequest="150" Source="shoe_placeholder.png"/>
+                <StackLayout Spacing="0" Orientation="Vertical" Padding="10">
+                    <Label FontFamily="Roboto-Bold" FontSize="12" TextColor="{d:StaticResource TitleHeader}" Text="{Binding Title, StringFormat='{0:C}'}"/>
+                    <StackLayout Margin="0,7,0,0" Orientation="Horizontal">
+                        <Label Text="{Binding FormattedRetailPrice}" TextColor="{d:StaticResource AccentColor}" FontSize="15"/>
+                        <Image Source="buy.png" WidthRequest="20" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

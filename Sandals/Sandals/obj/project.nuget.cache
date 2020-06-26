@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "nrkLzCo2QdSJbeJXAFKJ8q4cZAEtcK+Eq2X/6cSmmNCT4N2As01L7Pb1Gh3AOoqkc6hY6VHrZCVx/J5wHS2kaA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mark Scott\\source\\repos\\Sandals\\Sandals\\Sandals\\Sandals.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512",
+    "C:\\Users\\Mark Scott\\.nuget\\packages\\xamarin.forms.visual.material\\4.7.0.968\\xamarin.forms.visual.material.4.7.0.968.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sandals.Views.OrderHistoryDetail"
+             Title="Order Detail"
+             Padding="5"
+             Visual="Material"
+             BackgroundColor="{StaticResource PageBackground}"
+             xmlns:viewModels="clr-namespace:Sandals.ViewModels" xmlns:views="clr-namespace:Sandals.Views" xmlns:templates="clr-namespace:Sandals.Views.Templates">
+    <ContentPage.Content>
+           
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+            <ScrollView  Grid.Row="0" Orientation="Vertical">
+                <StackLayout Spacing="0" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Spacing="3" Padding="0" Margin="0,0,0,3">
+                        <Image WidthRequest="12" Source="server.png"/>
+                        <Label Text="Photos uploaded" FontAttributes="Italic"  FontSize="11" FontFamily="Roboto-Italic" TextColor="{StaticResource TitleSub}"/>
+                    </StackLayout>
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout BindableLayout.ItemsSource="{Binding OrderHistoryDetail.ImageSource}" Orientation="Horizontal" Spacing="7" >
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <views:UploadedImagesItemTemplate/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+
+                    <StackLayout Margin="0,10,0,3" Orientation="Horizontal" Spacing="3" Padding="0">
+                        <Image WidthRequest="12" Source="document.png"/>
+                        <Label Text="Order Details" FontAttributes="Italic"  FontSize="11" FontFamily="Roboto-Italic" TextColor="{StaticResource TitleSub}"/>
+                    </StackLayout>
+                    <Frame Padding="10" HasShadow="True" VerticalOptions="Start">
+                        <StackLayout Orientation="Vertical">
+                            <Label FontFamily="Roboto-Regular" TextColor="{StaticResource StandardTextColor}" Text="Order #: 43030"/>
+                            <Label  FontFamily="Roboto-Regular" TextColor="{StaticResource StandardTextColor}" Text="Total: $3,500.00"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontFamily="Roboto-Regular" TextColor="{StaticResource StandardTextColor}" Text="Order Status: "/>
+                                <Label FontFamily="Roboto-Regular" BackgroundColor="#78BC61" FontAttributes="Bold" TextColor="#fff" Padding="1" Text="PROCESSED" />
+                            </StackLayout>
+                            <Label FontFamily="Roboto-Regular" TextColor="{StaticResource StandardTextColor}" Text="Date: June 25, 2020"/>
+                            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" WidthRequest="1" Color="#d1d1d1"/>
+                            <Label Text="Items" FontSize="11" FontFamily="Roboto-Italic" FontAttributes="Italic"/>
+
+                            <ScrollView Orientation="Vertical">
+                                <StackLayout BindableLayout.ItemsSource="{Binding OrderHistoryDetail.OrderItems}" Orientation="Vertical" Spacing="2" >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <templates:OrderItemTemplate/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+               
+                <Button Margin="3" Grid.Row="1" BackgroundColor="#9B2915" Text="Cancel This Order"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

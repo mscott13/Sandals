@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Sandals.Views"
+             mc:Ignorable="d"
+             x:Class="Sandals.AppShell">
+
+    <ShellItem Route="login">
+        <ShellContent Title="Login" Icon="login.png" ContentTemplate="{DataTemplate views:LoginPage}" />
+        <ShellContent Title="Register" Icon="register.png" Route="register" ContentTemplate="{DataTemplate views:RegistrationPage}" />
+    </ShellItem>
+
+    <TabBar>
+        <Tab Title="History" Route="order_history" Icon="order_history.png">
+            <ShellContent Route="order_history_page" ContentTemplate="{DataTemplate views:OrderHistoryPage}"/>
+        </Tab>
+        <Tab Title="Create" Route="create" Icon="order_create.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CreatePage}"/>
+        </Tab>
+        <Tab Title="Profile" Route="profile" Icon="profile.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}"/>
+        </Tab>
+        <Tab Title="Cart" Route="cart" Icon="shopping_cart.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ShoppingCartPage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

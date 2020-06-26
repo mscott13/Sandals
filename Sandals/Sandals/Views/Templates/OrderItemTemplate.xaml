@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sandals.Views.Templates.OrderItemTemplate">
+  <ContentView.Content>
+        <Frame CornerRadius="3" IsClippedToBounds="True" Padding="0" VerticalOptions="Start" HasShadow="True">
+            <Grid VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="img_placeholder.jpg" Grid.Column="0"/>
+                <StackLayout  Grid.Column="1" Orientation="Vertical">
+                    <StackLayout Spacing="3" VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                        <Label Text="Nunc vel cursus arcu. Lorem ipsum dolor sit amet" FontSize="11"/>
+                        <Label Text="$3,200.00" FontSize="11"/>
+                        <Label Text="Quantity: 1" FontSize="11"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

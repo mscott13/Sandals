@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:other="clr-namespace:Sandals.Other" xmlns:views="clr-namespace:Sandals.Views"
+             mc:Ignorable="d"
+             x:Class="Sandals.Views.OrderHistoryPage"
+             Shell.NavBarIsVisible="False"
+             Padding="5"
+             Visual="Material"
+             BackgroundColor="{StaticResource PageBackground}"
+             xmlns:viewModels="clr-namespace:Sandals.ViewModels"
+             Title="Order History">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label Padding="0,-4,0,-4" FontFamily="Roboto-Regular" FontSize="30" Text="Order History" TextColor="{d:StaticResource TitleHeader}"/>
+                    <Label Margin="0,-10,0,0" FontFamily="Roboto-Regular" FontSize="11" Text="View/Manage your orders" TextColor="{StaticResource TitleSub}" FontAttributes="Italic"/>
+                </StackLayout>
+
+                <Frame  CornerRadius="50" Margin="0,10,0,0" HasShadow="True" BackgroundColor="{StaticResource AccentColor}" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                    <Label x:Name="ContentLabel" TextColor="#fff" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" Text="Ms"/>
+                </Frame>
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <CollectionView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemsSource="{Binding OrderHistories}">
+                    <CollectionView.EmptyView>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Label VerticalOptions="Center" FontSize="18" Text="Order history is empty, create a new order." HorizontalOptions="Fill" HorizontalTextAlignment="Center" Margin="10, 25, 10, 10"/>
+                                <Button HorizontalOptions="Center" Text="Create Order"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="6" Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:OrderHistoryItemTemplate>
+                                <views:OrderHistoryItemTemplate.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:OrderHistoryViewModel}}, Path=ShowHistoryDetailCommand}" CommandParameter="{Binding .}"/>
+                                </views:OrderHistoryItemTemplate.GestureRecognizers>
+                            </views:OrderHistoryItemTemplate>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sandals.Views.OrderHistoryItemTemplate">
+  <ContentView.Content>
+        <Frame VerticalOptions="Start" HasShadow="True" CornerRadius="0" Margin="1">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="img_placeholder.jpg" WidthRequest="100" VerticalOptions="Start" BackgroundColor="Red"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding Description}" TextColor="{StaticResource StandardTextColor}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding RetailPrice}" VerticalOptions="Center" TextColor="{StaticResource StandardTextColor}"/>
+                        <Label  VerticalOptions="Center"  Text="x" FontSize="10" TextColor="{StaticResource StandardTextColor}"/>
+                        <Label Text="{Binding Quantity}" FontSize="10" VerticalOptions="Center" TextColor="{StaticResource StandardTextColor}"/>
+                    </StackLayout>
+                    <Label Text="{Binding OrderDate}" TextColor="{StaticResource StandardTextColor}"/>
+                </StackLayout>
+                <Image Margin="5,0,0,0" BackgroundColor="Red" Source="right_arrow.jpg" VerticalOptions="CenterAndExpand" WidthRequest="20"/>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>
