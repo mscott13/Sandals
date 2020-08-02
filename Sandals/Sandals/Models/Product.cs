@@ -10,7 +10,6 @@ namespace Sandals.Models
         public string Title { get; set; }
         public string ImageUrl { get; set; }
         public decimal RetailPrice { get; set; }
-
         public string FormattedRetailPrice 
         {
             get 
